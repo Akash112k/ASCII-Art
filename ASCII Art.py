@@ -27,8 +27,8 @@ def map_ascii_characters(image,ar,w):
     z = 255/len(characters)+1
     cw = len(image[0])
     ch = len(image)
-    singleCharacterWidth = 6
-    singleCharacterHeight = 7
+    singleCharacterWidth = 5
+    singleCharacterHeight = 6
     arr = "\n".join([ "".join([characters[y/z] for y in x]) for x in image ])
     img = Image.new("1",(cw*singleCharacterWidth/2,ch*singleCharacterHeight/2),color=255)
     for i in range(0,len(image),2):
