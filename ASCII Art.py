@@ -1,16 +1,7 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import cv2
-from PIL import Image
+from PIL import Image,ImageFont
 import string
 from math import ceil
-
-
-# In[2]:
 
 
 import cv2
@@ -34,16 +25,16 @@ def get_grayscale_image(image_path):
     
 def map_ascii_characters(image,ar,w):
     z = 255/len(characters)+1
+    cw = len(image[0])
+    ch = len(image)
+    singleCharacterWidth = 6
+    singleCharacterHeight = 7
     arr = "\n".join([ "".join([characters[y/z] for y in x]) for x in image ])
-    img = Image.new("1",(w*5,int(w*10*ar)),color=255)
-    ImageDraw.Draw(img).text((0,0),arr)
+    img = Image.new("1",(cw*singleCharacterWidth/2,ch*singleCharacterHeight/2),color=255)
+    for i in range(0,len(image),2):
+        for j in range(0,len(image[0]),2):
+            ImageDraw.Draw(img).text((j/2*singleCharacterWidth,i/2*singleCharacterHeight),characters[image[i][j]/z])
+    #ImageDraw.Draw(img).text((0,0),arr)
     img.save("ascii_art.jpeg","jpeg")
 
-#map_ascii_characters(*get_grayscale_image('/home/akash/Downloads/img.jpg'))
-
-
-# In[ ]:
-
-
-map_ascii_characters(*get_grayscale_image('/home/akash/Akash.png'))
-
+map_ascii_characters(*get_grayscale_image('dog.png'))
