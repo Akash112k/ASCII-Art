@@ -6,7 +6,7 @@ Python program to convert Images to ASCII art
 
 
 ## Input Image
-<img src="https://raw.githubusercontent.com/akashraj97/ASCII-Art/master/dog.png" width="100" height="100">
+<img src="https://raw.githubusercontent.com/akashraj97/ASCII-Art/master/dog.png">
 
 
 ## Output Image
