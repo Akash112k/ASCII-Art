@@ -1,5 +1,5 @@
 # ASCII-Art
-Python program to convert Images to ASCII art
+Python code to convert Images to ASCII art.
 
 
 
